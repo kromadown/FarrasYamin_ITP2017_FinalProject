@@ -53,6 +53,8 @@ def game():
     clock = pygame.time.Clock()
     font = pygame.font.SysFont("arcadeclassic",40)
     result_1, result_2 = "Player 1 WIN","Player 2 WIN"
+    pygame.mixer.music.load("Final Fantasy VII - J-E-N-O-V-A [HQ].mp3")
+    pygame.mixer.music.play(0)
 
     running = True
     while running:
@@ -137,14 +139,16 @@ def game():
 
         if bar1_score >= 10:
             screen.blit(win_1,(220,240))
+            pygame.mixer.music.stop()
             pygame.display.update()
             pygame.time.delay(3000)
             retry.game_over()
             bar1_score = -1
             bar2_score = 0
             pygame.display.update()
-        if bar2_score >= 10:
+        elif bar2_score >= 10:
             screen.blit(win_2,(220,240))
+            pygame.mixer.music.stop()
             pygame.display.update()
             pygame.time.delay(3000)
             retry.game_over()

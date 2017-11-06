@@ -18,7 +18,6 @@ no = Retry("no.png",470,250)
 retry_sprites = Group(retry,yes,no)
 
 def game_over():
-    import main
     running = True
     while running:
         screen.fill((0,0,0))
@@ -29,7 +28,9 @@ def game_over():
                 pygame.quit()
             elif command.type == MOUSEBUTTONDOWN:
                 if yes.rect.collidepoint(mouse.get_pos()):
-                    main.mode()
+                    while running:
+                        import main
+                        main.mode()
                 elif no.rect.collidepoint(mouse.get_pos()):
                     running = False
                     pygame.quit()

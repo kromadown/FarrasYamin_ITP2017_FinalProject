@@ -37,15 +37,11 @@ def mode():
             pygame.quit()
         if command.type == MOUSEBUTTONDOWN:
             if single.rect.collidepoint(mouse.get_pos()):
-                pygame.mixer.music.load("Final Fantasy VII - J-E-N-O-V-A [HQ].mp3")
-                pygame.mixer.music.play(0)
                 pong.game()
-                pygame.mixer.music.stop()
+
             elif multi.rect.collidepoint(mouse.get_pos()):
-                pygame.mixer.music.load("Final Fantasy VII - J-E-N-O-V-A [HQ].mp3")
-                pygame.mixer.music.play(0)
                 pong_multi.game()
-                pygame.mixer.music.stop()
+
 
 #game start from here
 running = True
