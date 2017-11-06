@@ -111,6 +111,7 @@ def game():
         elif bar1_y <= 10. : bar1_y = 10.
         if bar2_y >= 420.: bar2_y = 420.
         elif bar2_y <= 10.: bar2_y = 10.
+
     #since i don't know anything about collision, ball hitting bars goes like this.
         if circle_x <= bar1_x + 10.:
             if circle_y >= bar1_y - 7.5 and circle_y <= bar1_y + 42.5:
@@ -144,8 +145,6 @@ def game():
             pygame.display.update()
             pygame.time.delay(3000)
             retry.game_over()
-            bar1_score = -1
-            bar2_score = 0
             pygame.display.update()
         elif bar2_score >= 10:
             screen.blit(lose,(290,240))
@@ -153,8 +152,6 @@ def game():
             pygame.display.update()
             pygame.time.delay(3000)
             retry.game_over()
-            bar1_score = 0
-            bar2_score = -1
             pygame.display.update()
 
 
