@@ -143,8 +143,6 @@ def game():
             pygame.display.update()
             pygame.time.delay(3000)
             retry.game_over()
-            bar1_score = -1
-            bar2_score = 0
             pygame.display.update()
         elif bar2_score >= 10:
             screen.blit(win_2,(220,240))
@@ -152,8 +150,6 @@ def game():
             pygame.display.update()
             pygame.time.delay(3000)
             retry.game_over()
-            bar1_score = 0
-            bar2_score = -1
             pygame.display.update()
 
 
