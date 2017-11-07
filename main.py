@@ -42,22 +42,23 @@ def mode():
             elif multi.rect.collidepoint(mouse.get_pos()):
                 pong_multi.game()
 
+def startscreen():
+    #game start from here
+    running = True
+    while running:
+        screen.fill((0,0,0))
+        menu_sprites.draw(screen)
+        for command in event.get():
+            if command.type == QUIT:
+                running = False
+                pygame.quit()
+            elif command.type == MOUSEBUTTONDOWN:
+                if start.rect.collidepoint(mouse.get_pos()):
+                    running = False
 
-#game start from here
+        display.update()
+
+startscreen()
 running = True
 while running:
-    screen.fill((0,0,0))
-    menu_sprites.draw(screen)
-    for command in event.get():
-        if command.type == QUIT:
-            running = False
-            pygame.quit()
-        elif command.type == MOUSEBUTTONDOWN:
-            if start.rect.collidepoint(mouse.get_pos()):
-                while running:
-                    mode()
-
-    display.update()
-
-
-
+    mode()

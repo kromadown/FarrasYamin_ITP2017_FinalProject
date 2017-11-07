@@ -144,6 +144,7 @@ def game():
             pygame.time.delay(3000)
             retry.game_over()
             pygame.display.update()
+            running = False
         elif bar2_score >= 10:
             screen.blit(win_2,(220,240))
             pygame.mixer.music.stop()
@@ -151,6 +152,7 @@ def game():
             pygame.time.delay(3000)
             retry.game_over()
             pygame.display.update()
+            running = False
 
 
         pygame.display.update()

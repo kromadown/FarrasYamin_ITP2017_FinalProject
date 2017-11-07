@@ -139,20 +139,22 @@ def game():
         win = font.render(str(result_1), True, (255,255,255))
         lose = font.render(str(result_2), True, (255,255,255))
 
-        if bar1_score >= 10:
+        if bar1_score >= 3:
             screen.blit(win,(300,240))
             pygame.mixer.music.stop()
             pygame.display.update()
             pygame.time.delay(3000)
             retry.game_over()
             pygame.display.update()
-        elif bar2_score >= 10:
+            running = False
+        elif bar2_score >= 3:
             screen.blit(lose,(290,240))
             pygame.mixer.music.stop()
             pygame.display.update()
             pygame.time.delay(3000)
             retry.game_over()
             pygame.display.update()
+            running = False
 
 
         pygame.display.update()

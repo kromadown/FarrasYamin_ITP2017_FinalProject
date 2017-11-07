@@ -28,9 +28,7 @@ def game_over():
                 pygame.quit()
             elif command.type == MOUSEBUTTONDOWN:
                 if yes.rect.collidepoint(mouse.get_pos()):
-                    while running:
-                        import main
-                        main.mode()
+                    running = False
                 elif no.rect.collidepoint(mouse.get_pos()):
                     running = False
                     pygame.quit()
